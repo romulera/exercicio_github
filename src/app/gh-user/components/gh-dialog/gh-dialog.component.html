@@ -1,0 +1,20 @@
+<h2>Buscando Programador</h2>
+
+<H2 mat-dialog-title><strong>{{ username }}</strong> encontrado</H2>
+<div mat-dialog-content>
+    <p *ngIf="user != null">Nome: <strong>{{ user?.name }}</strong> </p>
+    <p *ngIf="user != null">Programador ID-<strong>{{ user?.id }}</strong> </p>
+
+    <img [src]="user?.avatar_url" > 
+
+    <p> Usuário desde: <strong> {{ user?.created_at | date: "YYYY"}} </strong></p>
+    <p *ngIf="user?.location != null"> Localizacao em <strong>{{ user?.location }}</strong>  </p>
+    <p *ngIf="user?.followers != null"> Possui <strong>{{ user?.followers }}</strong> seguidores</p>
+    <p *ngIf="user?.public_repos != null || 0"> Possui <strong>{{ user?.public_repos}}</strong> repositórios</p>
+    <p> Repositório com mais estrelas é <strong>{{ ranking[0]?.[1] }}</strong> com <strong>{{ ranking[0]?.[0] }}</strong> estrelas </p>
+    <a [href]=" user?.html_url" target="_blank">Visitar Git do programador</a>
+    
+    
+    
+
+</div>
